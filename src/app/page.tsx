@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
-import { Header } from "../components/Header";
 import { Hero } from "../components/Hero";
 import { ServicosResumo } from "../components/ServicosResumo";
 import { TreinamentosSection } from "../components/TreinamentosSection";
 import { ContatoRapido } from "../components/ContatoRapido";
 
 export const metadata: Metadata = {
-  title: "Haase Soluções | Segurança do Trabalho e Meio Ambiente em Rondônia",
+  title: "Haase Soluções | Segurança do Trabalho e Meio Ambiente em Porto Velho – RO",
   description:
-    "Consultoria especializada em Segurança do Trabalho e Meio Ambiente. Laudos, programas, licenciamento ambiental, treinamentos e adequação às normas. Atendimento em Rondônia e região.",
+    "Consultoria em Segurança do Trabalho e Meio Ambiente em Porto Velho – RO. Programas, laudos, licenciamento ambiental e treinamentos para manter sua empresa em conformidade e protegida.",
   keywords: [
     "segurança do trabalho",
     "meio ambiente",
@@ -58,7 +57,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900">
-      <Header />
       <Hero />
       <ServicosResumo />
       <TreinamentosSection />

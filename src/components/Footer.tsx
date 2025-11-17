@@ -37,8 +37,10 @@ export function Footer() {
 
                         <p className="text-xs text-slate-300 max-w-sm">
                             Consultoria especializada em programas, laudos, licenciamento
-                            ambiental e treinamentos. Soluções completas para empresas que
-                            buscam segurança jurídica, operacional e ambiental.
+                            ambiental e treinamentos, atendendo empresas em{" "}
+                            <span className="font-semibold">Porto Velho – RO e região</span>.
+                            Soluções completas para quem busca segurança jurídica, operacional
+                            e ambiental.
                         </p>
 
                         <p className="text-xs font-medium text-emerald-300">
@@ -65,16 +67,16 @@ export function Footer() {
                                 Sobre a Haase
                             </Link>
                             <Link
-                                href="/servicos"
+                                href="/seguranca-do-trabalho"
                                 className="hover:text-emerald-300 transition-colors"
                             >
-                                Serviços
+                                Segurança do Trabalho
                             </Link>
                             <Link
-                                href="/treinamentos"
+                                href="/meio-ambiente"
                                 className="hover:text-emerald-300 transition-colors"
                             >
-                                Treinamentos
+                                Meio Ambiente
                             </Link>
                             <Link
                                 href="/contato"
@@ -82,12 +84,17 @@ export function Footer() {
                             >
                                 Contato
                             </Link>
-                            {/* você pode criar essa página depois */}
                             <Link
                                 href="/politica-de-privacidade"
                                 className="hover:text-emerald-300 transition-colors"
                             >
                                 Política de Privacidade
+                            </Link>
+                            <Link
+                                href="/termos-de-uso"
+                                className="hover:text-emerald-300 transition-colors"
+                            >
+                                Termos de Uso
                             </Link>
                         </nav>
                     </div>
@@ -109,7 +116,10 @@ export function Footer() {
                             <p className="flex items-start gap-2">
                                 <MapPin size={14} className="mt-0.5 text-emerald-300" />
                                 <span>
-                                    Atendemos empresas em Rondônia e região.
+                                    Atendemos empresas em{" "}
+                                    <span className="font-semibold">
+                                        Porto Velho – RO e região.
+                                    </span>
                                 </span>
                             </p>
                         </div>
@@ -149,19 +159,17 @@ export function Footer() {
                             Precisa colocar a documentação da sua empresa em dia?
                         </p>
                         <p className="text-[11px] text-emerald-100/80">
-                            Fale com um especialista da Haase e receba uma orientação inicial
-                            sem compromisso sobre programas, laudos ou licenciamento.
+                            Fale com um especialista da Haase em{" "}
+                            <span className="font-semibold">Porto Velho – RO</span> e receba
+                            uma orientação inicial sem compromisso sobre programas, laudos
+                            ou licenciamento.
                         </p>
                     </div>
                     <a
                         href={WHATSAPP_LINK}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="
-              inline-flex items-center justify-center rounded-full
-              bg-emerald-500 px-4 py-2 text-[11px] font-semibold text-slate-950
-              shadow-sm hover:bg-emerald-400 transition
-            "
+                        className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-4 py-2 text-[11px] font-semibold text-slate-950 shadow-sm hover:bg-emerald-400 transition"
                     >
                         Falar com um especialista
                     </a>
@@ -172,8 +180,8 @@ export function Footer() {
             <div className="border-t border-slate-800 bg-slate-950">
                 <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-4 py-4 text-[11px] text-slate-400 md:flex-row">
                     <p>
-                        © {currentYear} Haase Soluções em Segurança do Trabalho e Meio Ambiente.
-                        Todos os direitos reservados.
+                        © {currentYear} Haase Soluções em Segurança do Trabalho e Meio
+                        Ambiente. Todos os direitos reservados.
                     </p>
                     <p>
                         Desenvolvido por{" "}

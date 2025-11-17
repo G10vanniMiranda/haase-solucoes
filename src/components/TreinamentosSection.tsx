@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { WHATSAPP_LINK } from "../lib/constants";
 
 export function TreinamentosSection() {
     return (
@@ -21,8 +22,11 @@ export function TreinamentosSection() {
                         </h2>
 
                         <p className="mt-2 text-sm text-slate-600">
-                            A Haase realiza treinamentos práticos e atualizados para colaboradores e gestores,
-                            alinhados às normas vigentes e à realidade da sua empresa.
+                            A Haase realiza treinamentos práticos e atualizados para colaboradores
+                            e gestores, alinhados às normas vigentes e à realidade da sua empresa.
+                            Os treinamentos fazem parte das nossas soluções de{" "}
+                            <span className="font-semibold">Segurança do Trabalho</span> e{" "}
+                            <span className="font-semibold">Meio Ambiente</span>.
                         </p>
 
                         <ul className="mt-4 space-y-2 text-sm text-slate-700">
@@ -32,19 +36,38 @@ export function TreinamentosSection() {
                             <li>• Treinamentos personalizados por segmento</li>
                         </ul>
 
-                        {/* BOTÃO COM ANIMAÇÃO */}
+                        {/* CTA PRINCIPAL */}
                         <motion.div
                             whileHover={{ scale: 1.05, x: 3 }}
                             transition={{ type: "spring", stiffness: 240, damping: 18 }}
                             className="inline-flex"
                         >
-                            <Link
-                                href="/treinamentos"
+                            <a
+                                href={WHATSAPP_LINK}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="mt-5 inline-flex text-sm font-semibold text-emerald-700 hover:text-emerald-900 transition"
                             >
-                                Ver mais sobre os treinamentos →
-                            </Link>
+                                Falar sobre treinamentos →
+                            </a>
                         </motion.div>
+
+                        {/* MINI LINKS / NOVO FUNIL */}
+                        <div className="mt-4 flex flex-col gap-1 text-xs font-medium text-emerald-700">
+                            <Link
+                                href="/seguranca-do-trabalho"
+                                className="hover:text-emerald-900 transition"
+                            >
+                                • Ver soluções em Segurança do Trabalho
+                            </Link>
+
+                            <Link
+                                href="/meio-ambiente"
+                                className="hover:text-emerald-900 transition"
+                            >
+                                • Ver soluções em Meio Ambiente
+                            </Link>
+                        </div>
                     </motion.div>
 
                     {/* COLUNA DIREITA */}

@@ -20,6 +20,11 @@ export function Hero() {
                         Consultoria ambiental e segurança do trabalho
                     </p>
 
+                    <p className="text-xs font-medium text-emerald-100">
+                        Atuação especializada para empresas de Porto Velho – RO e região.
+                    </p>
+
+
                     <h1 className="text-3xl font-bold leading-tight md:text-4xl">
                         Soluções completas em Segurança do Trabalho e Meio Ambiente
                         para a sua empresa estar em conformidade e protegida.
@@ -29,8 +34,10 @@ export function Hero() {
                         A Haase Soluções atua com programas, laudos, licenciamento e treinamento,
                         unindo <span className="font-semibold">segurança, saúde ocupacional</span> e{" "}
                         <span className="font-semibold">sustentabilidade</span> para reduzir riscos,
-                        evitar multas e garantir tranquilidade ao seu negócio.
+                        evitar multas e garantir tranquilidade ao seu negócio em{" "}
+                        <span className="font-semibold">Porto Velho – RO e região</span>.
                     </p>
+
 
                     <ul className="grid gap-3 text-sm md:grid-cols-2">
                         <FeatureItem>Programas e laudos ambientais e ocupacionais</FeatureItem>
@@ -62,10 +69,10 @@ export function Hero() {
                             className="inline-flex"
                         >
                             <Link
-                                href="/servicos"
+                                href="/seguranca-do-trabalho"
                                 className="inline-flex flex-1 items-center justify-center rounded-full border border-emerald-300 px-6 py-2.5 text-sm font-semibold text-emerald-50 transition-colors hover:bg-emerald-700/90"
                             >
-                                Ver todos os serviços
+                                Ver soluções em Segurança do Trabalho
                             </Link>
                         </motion.div>
                     </div>
@@ -107,10 +114,10 @@ function AreasDeAtuacao() {
                 </h2>
 
                 <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                    <ActuationCard titulo="Segurança do trabalho">
+                    <ActuationCard titulo="Segurança do trabalho" href="/seguranca-do-trabalho">
                         Programas e laudos ocupacionais para proteger equipes e reduzir acidentes.
                     </ActuationCard>
-                    <ActuationCard titulo="Meio ambiente">
+                    <ActuationCard titulo="Meio ambiente" href="/meio-ambiente">
                         Licenciamento, relatórios e planos de controle ambiental para conformidade legal.
                     </ActuationCard>
                     <ActuationCard titulo="Saúde & Sustentabilidade">
@@ -134,11 +141,32 @@ function AreasDeAtuacao() {
     );
 }
 
-function ActuationCard({ titulo, children }: { titulo: string; children: React.ReactNode }) {
-    return (
-        <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+function ActuationCard({
+    titulo,
+    children,
+    href,
+}: {
+    titulo: string;
+    children: React.ReactNode;
+    href?: string;
+}) {
+    const content = (
+        <div
+            className={`rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:shadow-md ${href ? "hover:bg-emerald-50 cursor-pointer" : ""
+                }`}
+        >
             <p className="text-xs font-semibold text-emerald-700">{titulo}</p>
             <p className="mt-1 text-xs text-slate-700">{children}</p>
         </div>
     );
+
+    if (href) {
+        return (
+            <Link href={href} className="block">
+                {content}
+            </Link>
+        );
+    }
+
+    return content;
 }

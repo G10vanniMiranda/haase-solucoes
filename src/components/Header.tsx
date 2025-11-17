@@ -47,11 +47,17 @@ export function Header() {
                         <Link href="/sobre" className="hover:text-emerald-800 transition-all">
                             Sobre
                         </Link>
-                        <Link href="/servicos" className="hover:text-emerald-800 transition-all">
-                            Serviços
+                        <Link
+                            href="/seguranca-do-trabalho"
+                            className="hover:text-emerald-800 transition-all"
+                        >
+                            Segurança do Trabalho
                         </Link>
-                        <Link href="/treinamentos" className="hover:text-emerald-800 transition-all">
-                            Treinamentos
+                        <Link
+                            href="/meio-ambiente"
+                            className="hover:text-emerald-800 transition-all"
+                        >
+                            Meio Ambiente
                         </Link>
                         <Link href="/contato" className="hover:text-emerald-800 transition-all">
                             Contato
@@ -110,9 +116,7 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
                 >
                     {/* TOPO */}
                     <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-4 border-b border-slate-200">
-                        <span className="text-sm font-semibold text-slate-900">
-                            Menu
-                        </span>
+                        <span className="text-sm font-semibold text-slate-900">Menu</span>
                         <button
                             onClick={onClose}
                             className="p-2 rounded-lg hover:bg-slate-100 transition"
@@ -124,23 +128,39 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
 
                     {/* LINKS */}
                     <nav className="mx-auto mt-4 flex max-w-6xl flex-col gap-4 px-4 text-base font-medium text-slate-800">
-                        <Link href="/" onClick={onClose} className="py-1 hover:text-emerald-700 transition">
-                            Início
-                        </Link>
-                        <Link href="/sobre" onClick={onClose} className="py-1 hover:text-emerald-700 transition">
-                            Sobre
-                        </Link>
-                        <Link href="/servicos" onClick={onClose} className="py-1 hover:text-emerald-700 transition">
-                            Serviços
-                        </Link>
                         <Link
-                            href="/treinamentos"
+                            href="/"
                             onClick={onClose}
                             className="py-1 hover:text-emerald-700 transition"
                         >
-                            Treinamentos
+                            Início
                         </Link>
-                        <Link href="/contato" onClick={onClose} className="py-1 hover:text-emerald-700 transition">
+                        <Link
+                            href="/sobre"
+                            onClick={onClose}
+                            className="py-1 hover:text-emerald-700 transition"
+                        >
+                            Sobre
+                        </Link>
+                        <Link
+                            href="/seguranca-do-trabalho"
+                            onClick={onClose}
+                            className="py-1 hover:text-emerald-700 transition"
+                        >
+                            Segurança do Trabalho
+                        </Link>
+                        <Link
+                            href="/meio-ambiente"
+                            onClick={onClose}
+                            className="py-1 hover:text-emerald-700 transition"
+                        >
+                            Meio Ambiente
+                        </Link>
+                        <Link
+                            href="/contato"
+                            onClick={onClose}
+                            className="py-1 hover:text-emerald-700 transition"
+                        >
                             Contato
                         </Link>
                     </nav>
