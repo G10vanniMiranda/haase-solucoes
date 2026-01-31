@@ -74,11 +74,11 @@ export default function Content() {
                         className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm text-sm text-slate-700"
                     >
                         <p className="font-semibold text-emerald-800">Para quais tipos de empresas?</p>
-                        <ul className="mt-3 space-y-2 text-xs">
-                            <li>• Empresas que precisam de licenciamento ambiental.</li>
-                            <li>• Negócios com geração de resíduos e necessidade de PGRS.</li>
-                            <li>• Empreendimentos sujeitos a controle de supressão vegetal.</li>
-                            <li>• Organizações que buscam estruturar a gestão ambiental.</li>
+                        <ul className="mt-3 space-y-2 text-xs list-disc pl-4">
+                            <li>Empresas que precisam de licenciamento ambiental.</li>
+                            <li>Negócios com geração de resíduos e necessidade de PGRS.</li>
+                            <li>Empreendimentos sujeitos a controle de supressão vegetal.</li>
+                            <li>Organizações que buscam estruturar a gestão ambiental.</li>
                         </ul>
                     </motion.div>
                 </div>
@@ -150,11 +150,11 @@ export default function Content() {
                             de impactos ambientais e promoção de uma cultura interna voltada à
                             sustentabilidade.
                         </p>
-                        <ul className="mt-4 space-y-2 text-sm text-slate-700">
-                            <li>• Orientação para segregação e destinação correta de resíduos.</li>
-                            <li>• Adequação aos requisitos legais e normativos sobre resíduos.</li>
-                            <li>• Implementação de rotinas de controle e registro.</li>
-                            <li>• Ações de conscientização para equipes e gestores.</li>
+                        <ul className="mt-4 space-y-2 text-sm text-slate-700 list-disc pl-5">
+                            <li>Orientação para segregação e destinação correta de resíduos.</li>
+                            <li>Adequação aos requisitos legais e normativos sobre resíduos.</li>
+                            <li>Implementação de rotinas de controle e registro.</li>
+                            <li>Ações de conscientização para equipes e gestores.</li>
                         </ul>
                     </motion.div>
 
@@ -166,11 +166,11 @@ export default function Content() {
                         className="rounded-2xl border border-emerald-100 bg-white p-6 text-sm text-slate-800 shadow-sm"
                     >
                         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Benefícios ambientais e estratégicos</p>
-                        <ul className="mt-3 space-y-2 text-sm">
-                            <li>• Redução de risco de autuações e sanções ambientais.</li>
-                            <li>• Melhoria da imagem institucional e responsabilidade ESG.</li>
-                            <li>• Uso mais eficiente de recursos e redução de desperdícios.</li>
-                            <li>• Maior controle sobre impactos ambientais do negócio.</li>
+                        <ul className="mt-3 space-y-2 text-sm list-disc pl-5">
+                            <li>Redução de risco de autuações e sanções ambientais.</li>
+                            <li>Melhoria da imagem institucional e responsabilidade ESG.</li>
+                            <li>Uso mais eficiente de recursos e redução de desperdícios.</li>
+                            <li>Maior controle sobre impactos ambientais do negócio.</li>
                         </ul>
                     </motion.div>
                 </div>
@@ -239,13 +239,13 @@ function SectionCard({
             className="rounded-2xl border border-slate-200 bg-white p-6 text-xs text-slate-700 shadow-sm"
         >
             <h3 className="text-sm font-semibold text-slate-900">{titulo}</h3>
-            <ul className="mt-3 space-y-2">{children}</ul>
+            <ul className="mt-3 space-y-2 list-disc pl-4">{children}</ul>
         </motion.div>
     );
 }
 
 function Item({ children }: { children: React.ReactNode }) {
-    return <li>• {children}</li>;
+    return <li>{children}</li>;
 }
 
 function StepCard({

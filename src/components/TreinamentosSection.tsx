@@ -29,11 +29,11 @@ export function TreinamentosSection() {
                             <span className="font-semibold">Meio Ambiente</span>.
                         </p>
 
-                        <ul className="mt-4 space-y-2 text-sm text-slate-700">
-                            <li>• Capacitação em segurança do trabalho</li>
-                            <li>• Boas práticas ambientais e gestão de resíduos</li>
-                            <li>• Conscientização sobre saúde ocupacional</li>
-                            <li>• Treinamentos personalizados por segmento</li>
+                        <ul className="mt-4 space-y-2 text-sm text-slate-700 list-disc pl-5">
+                            <li>Capacitação em segurança do trabalho</li>
+                            <li>Boas práticas ambientais e gestão de resíduos</li>
+                            <li>Conscientização sobre saúde ocupacional</li>
+                            <li>Treinamentos personalizados por segmento</li>
                         </ul>
 
                         {/* CTA PRINCIPAL */}
@@ -53,21 +53,24 @@ export function TreinamentosSection() {
                         </motion.div>
 
                         {/* MINI LINKS / NOVO FUNIL */}
-                        <div className="mt-4 flex flex-col gap-1 text-xs font-medium text-emerald-700">
-                            <Link
-                                href="/seguranca-do-trabalho"
-                                className="hover:text-emerald-900 transition"
-                            >
-                                • Ver soluções em Segurança do Trabalho
-                            </Link>
-
-                            <Link
-                                href="/meio-ambiente"
-                                className="hover:text-emerald-900 transition"
-                            >
-                                • Ver soluções em Meio Ambiente
-                            </Link>
-                        </div>
+                        <ul className="mt-4 space-y-1 text-xs font-medium text-emerald-700 list-disc pl-4">
+                            <li>
+                                <Link
+                                    href="/seguranca-do-trabalho"
+                                    className="hover:text-emerald-900 transition"
+                                >
+                                    Ver soluções em Segurança do Trabalho
+                                </Link>
+                            </li>
+                            <li>
+                                <Link
+                                    href="/meio-ambiente"
+                                    className="hover:text-emerald-900 transition"
+                                >
+                                    Ver soluções em Meio Ambiente
+                                </Link>
+                            </li>
+                        </ul>
                     </motion.div>
 
                     {/* COLUNA DIREITA */}
@@ -82,11 +85,11 @@ export function TreinamentosSection() {
                             Benefícios para sua empresa
                         </p>
 
-                        <ul className="mt-3 space-y-2 text-sm">
-                            <li>• Redução de acidentes e afastamentos</li>
-                            <li>• Equipes mais conscientes e engajadas</li>
-                            <li>• Cumprimento das exigências legais</li>
-                            <li>• Melhoria da imagem institucional</li>
+                        <ul className="mt-3 space-y-2 text-sm list-disc pl-5">
+                            <li>Redução de acidentes e afastamentos</li>
+                            <li>Equipes mais conscientes e engajadas</li>
+                            <li>Cumprimento das exigências legais</li>
+                            <li>Melhoria da imagem institucional</li>
                         </ul>
                     </motion.div>
                 </div>

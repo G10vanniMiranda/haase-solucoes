@@ -174,11 +174,11 @@ function ServiceGroup({
         >
             <h2 className="text-lg font-semibold text-slate-900">{title}</h2>
             <p className="mt-2 text-xs text-slate-600">{description}</p>
-            <ul className="mt-4 space-y-2 text-xs text-slate-700">{children}</ul>
+            <ul className="mt-4 space-y-2 text-xs text-slate-700 list-disc pl-4">{children}</ul>
         </motion.section>
     );
 }
 
 function ServiceItem({ children }: { children: React.ReactNode }) {
-    return <li>• {children}</li>;
+    return <li>{children}</li>;
 }

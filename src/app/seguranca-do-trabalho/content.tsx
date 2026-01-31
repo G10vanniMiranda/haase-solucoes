@@ -76,11 +76,11 @@ export default function Content() {
             className="rounded-2xl border border-slate-200 bg-slate-50 p-6 shadow-sm text-sm text-slate-700"
           >
             <p className="font-semibold text-emerald-800">Para quem é indicado?</p>
-            <ul className="mt-3 space-y-2 text-xs">
-              <li>• Empresas que desejam se adequar às normas de segurança.</li>
-              <li>• Negócios em expansão que precisam estruturar a área de SST.</li>
-              <li>• Organizações com risco de autuações ou fiscalizações.</li>
-              <li>• Empresas que buscam reduzir acidentes e afastamentos.</li>
+            <ul className="mt-3 space-y-2 text-xs list-disc pl-4">
+              <li>Empresas que desejam se adequar às normas de segurança.</li>
+              <li>Negócios em expansão que precisam estruturar a área de SST.</li>
+              <li>Organizações com risco de autuações ou fiscalizações.</li>
+              <li>Empresas que buscam reduzir acidentes e afastamentos.</li>
             </ul>
           </motion.div>
         </div>
@@ -127,11 +127,11 @@ export default function Content() {
               focados na prevenção de acidentes, na correta utilização de
               equipamentos e no cumprimento dos procedimentos de segurança.
             </p>
-            <ul className="mt-4 space-y-2 text-sm text-slate-700">
-              <li>• Capacitações em segurança do trabalho e prevenção de riscos.</li>
-              <li>• Conscientização sobre saúde ocupacional e qualidade de vida.</li>
-              <li>• Treinamentos personalizados conforme o segmento da empresa.</li>
-              <li>• Orientações para gestores sobre responsabilidades legais.</li>
+            <ul className="mt-4 space-y-2 text-sm text-slate-700 list-disc pl-5">
+              <li>Capacitações em segurança do trabalho e prevenção de riscos.</li>
+              <li>Conscientização sobre saúde ocupacional e qualidade de vida.</li>
+              <li>Treinamentos personalizados conforme o segmento da empresa.</li>
+              <li>Orientações para gestores sobre responsabilidades legais.</li>
             </ul>
           </motion.div>
 
@@ -143,11 +143,11 @@ export default function Content() {
             className="rounded-2xl border border-emerald-100 bg-white p-6 text-sm text-slate-800 shadow-sm"
           >
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">Benefícios dos treinamentos</p>
-            <ul className="mt-3 space-y-2 text-sm">
-              <li>• Redução de acidentes e incidentes internos.</li>
-              <li>• Equipes mais conscientes e engajadas na prevenção.</li>
-              <li>• Menos afastamentos e impactos na produtividade.</li>
-              <li>• Fortalecimento da cultura de segurança na empresa.</li>
+            <ul className="mt-3 space-y-2 text-sm list-disc pl-5">
+              <li>Redução de acidentes e incidentes internos.</li>
+              <li>Equipes mais conscientes e engajadas na prevenção.</li>
+              <li>Menos afastamentos e impactos na produtividade.</li>
+              <li>Fortalecimento da cultura de segurança na empresa.</li>
             </ul>
           </motion.div>
         </div>
@@ -237,13 +237,13 @@ function SectionCard({
       className="rounded-2xl border border-slate-200 bg-white p-6 text-xs text-slate-700 shadow-sm"
     >
       <h3 className="text-sm font-semibold text-slate-900">{titulo}</h3>
-      <ul className="mt-3 space-y-2">{children}</ul>
+      <ul className="mt-3 space-y-2 list-disc pl-4">{children}</ul>
     </motion.div>
   );
 }
 
 function Item({ children }: { children: React.ReactNode }) {
-  return <li>• {children}</li>;
+  return <li>{children}</li>;
 }
 
 function BenefitCard({ children }: { children: React.ReactNode }) {

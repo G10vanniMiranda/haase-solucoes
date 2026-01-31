@@ -59,11 +59,11 @@ export default function ContatoPage() {
                                 Envie uma mensagem resumindo a situação da sua empresa e, se
                                 possível, informe:
                             </p>
-                            <ul className="mt-3 space-y-1 text-xs text-slate-700">
-                                <li>• Ramo de atividade da empresa;</li>
-                                <li>• Cidade/estado onde a empresa atua;</li>
-                                <li>• Se já possui programas, laudos ou licenças;</li>
-                                <li>• Se há alguma fiscalização, prazo ou exigência em aberto.</li>
+                            <ul className="mt-3 space-y-1 text-xs text-slate-700 list-disc pl-4">
+                                <li>Ramo de atividade da empresa;</li>
+                                <li>Cidade/estado onde a empresa atua;</li>
+                                <li>Se já possui programas, laudos ou licenças;</li>
+                                <li>Se há alguma fiscalização, prazo ou exigência em aberto.</li>
                             </ul>
 
                             <a
@@ -86,11 +86,11 @@ export default function ContatoPage() {
                             <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-emerald-700">
                                 Para quem é indicado
                             </p>
-                            <ul className="mt-3 space-y-2">
-                                <li>• Empresas que precisam colocar a documentação em dia.</li>
-                                <li>• Negócios em expansão que vão iniciar novas atividades.</li>
-                                <li>• Empreendimentos com exigências de órgãos ambientais.</li>
-                                <li>• Organizações que querem reduzir riscos e passivos.</li>
+                            <ul className="mt-3 space-y-2 list-disc pl-4">
+                                <li>Empresas que precisam colocar a documentação em dia.</li>
+                                <li>Negócios em expansão que vão iniciar novas atividades.</li>
+                                <li>Empreendimentos com exigências de órgãos ambientais.</li>
+                                <li>Organizações que querem reduzir riscos e passivos.</li>
                             </ul>
                         </div>
                     </motion.div>

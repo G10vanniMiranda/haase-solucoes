@@ -34,27 +34,27 @@ export function ServicosResumo() {
                         titulo="Segurança do Trabalho"
                         href="/seguranca-do-trabalho"
                     >
-                        <li>• Consultoria em Segurança do Trabalho</li>
-                        <li>• Programas e laudos ocupacionais</li>
-                        <li>• Diagnóstico de riscos e adequações</li>
-                        <li>• Treinamentos focados em prevenção</li>
+                        <li>Consultoria em Segurança do Trabalho</li>
+                        <li>Programas e laudos ocupacionais</li>
+                        <li>Diagnóstico de riscos e adequações</li>
+                        <li>Treinamentos focados em prevenção</li>
                     </ResumoCard>
 
                     <ResumoCard
                         titulo="Meio Ambiente"
                         href="/meio-ambiente"
                     >
-                        <li>• Consultoria ambiental completa</li>
-                        <li>• Licenciamento ambiental</li>
-                        <li>• Planos e programas (PCA, PGRS, PRAD, PGRSS)</li>
-                        <li>• Estudos e relatórios ambientais</li>
+                        <li>Consultoria ambiental completa</li>
+                        <li>Licenciamento ambiental</li>
+                        <li>Planos e programas (PCA, PGRS, PRAD, PGRSS)</li>
+                        <li>Estudos e relatórios ambientais</li>
                     </ResumoCard>
 
                     <ResumoCard titulo="Treinamentos corporativos">
-                        <li>• Treinamentos em Segurança do Trabalho</li>
-                        <li>• Boas práticas ambientais e gestão de resíduos</li>
-                        <li>• Conscientização em saúde ocupacional</li>
-                        <li>• Conteúdos adaptados à realidade da empresa</li>
+                        <li>Treinamentos em Segurança do Trabalho</li>
+                        <li>Boas práticas ambientais e gestão de resíduos</li>
+                        <li>Conscientização em saúde ocupacional</li>
+                        <li>Conteúdos adaptados à realidade da empresa</li>
                     </ResumoCard>
                 </div>
 
@@ -98,7 +98,7 @@ function ResumoCard({
                 }`}
         >
             <h3 className="text-sm font-semibold text-slate-900">{titulo}</h3>
-            <ul className="mt-3 space-y-1 text-xs text-slate-700">{children}</ul>
+            <ul className="mt-3 space-y-1 text-xs text-slate-700 list-disc pl-4">{children}</ul>
         </div>
     );
 
