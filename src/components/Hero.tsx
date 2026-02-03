@@ -112,7 +112,7 @@ function AreasDeAtuacao() {
                 <div className="mt-4 grid gap-3 sm:grid-cols-2 sm:auto-rows-fr">
                     <ActuationCard titulo="Segurança do trabalho" href="/seguranca-do-trabalho">
                         Assessoria e consultoria técnica, documentos legais (PGR, LTCAT, APR, POPs),
-                        treinamentos conforme NR's, DDS, gestão de EPI/EPC e apoio ao SESMT.
+                        treinamentos conforme NR&apos;s, DDS, gestão de EPI/EPC e apoio ao SESMT.
                     </ActuationCard>
                     <ActuationCard titulo="Perícias judiciais" href="/pericias-judiciais">
                         Perícias e assistência técnica em insalubridade, periculosidade e meio ambiente,

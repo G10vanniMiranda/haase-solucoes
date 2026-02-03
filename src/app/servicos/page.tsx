@@ -34,14 +34,14 @@ export default function ServicosPage() {
                 <div className="mx-auto max-w-6xl px-4 space-y-10">
                     <ServiceGroup
                         title="Segurança do Trabalho"
-                        description="Assessoria e consultoria técnica, acompanhamento de obras, elaboração de documentos legais e treinamentos conforme NR's."
+                        description="Assessoria e consultoria técnica, acompanhamento de obras, elaboração de documentos legais e treinamentos conforme NR&apos;s."
                         linkHref="/seguranca-do-trabalho"
                         linkLabel="Ver página de Segurança do Trabalho"
                     >
                         <ServiceItem>Assessoria e consultoria em Segurança do Trabalho</ServiceItem>
                         <ServiceItem>Acompanhamento técnico de obras</ServiceItem>
                         <ServiceItem>Documentos legais (PGR, LTCAT, APR, POPs)</ServiceItem>
-                        <ServiceItem>Implantação e acompanhamento de rotinas conforme NR's</ServiceItem>
+                        <ServiceItem>Implantação e acompanhamento de rotinas conforme NR&apos;s</ServiceItem>
                         <ServiceItem>Gestão de EPI e EPC</ServiceItem>
                         <ServiceItem>DDS - Diálogo Diário de Segurança</ServiceItem>
                         <ServiceItem>Apoio técnico ao SESMT</ServiceItem>

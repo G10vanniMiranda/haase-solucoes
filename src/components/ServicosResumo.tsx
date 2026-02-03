@@ -32,7 +32,7 @@ export function ServicosResumo() {
                         <li>Assessoria e consultoria técnica em SST</li>
                         <li>Acompanhamento técnico de obras</li>
                         <li>Documentos legais (PGR, LTCAT, APR, POPs)</li>
-                        <li>Treinamentos conforme NR's e DDS</li>
+                        <li>Treinamentos conforme NR&apos;s e DDS</li>
                     </ResumoCard>
 
                     <ResumoCard titulo="Perícias Judiciais" href="/pericias-judiciais">

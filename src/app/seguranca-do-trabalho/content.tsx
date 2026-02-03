@@ -72,7 +72,7 @@ export default function Content() {
             <ul className="mt-3 space-y-2 text-xs list-disc pl-4">
               <li>Assessoria e consultoria em Segurança do Trabalho</li>
               <li>Acompanhamento técnico de obras</li>
-              <li>Implantação e acompanhamento de rotinas conforme NR's</li>
+              <li>Implantação e acompanhamento de rotinas conforme NR&apos;s</li>
               <li>Investigação e análise de acidentes de trabalho</li>
               <li>Gestão de EPI e EPC</li>
               <li>DDS - Diálogo Diário de Segurança</li>
@@ -148,7 +148,7 @@ export default function Content() {
         <div className="mx-auto max-w-6xl px-4">
           <h2 className="text-xl font-bold text-slate-900">Treinamentos - Normas Regulamentadoras</h2>
           <p className="mt-2 max-w-2xl text-sm text-slate-600">
-            Integrações e capacitações conforme as principais NR's, com abordagem prática e alinhada à realidade da empresa.
+            Integrações e capacitações conforme as principais NR&apos;s, com abordagem prática e alinhada à realidade da empresa.
           </p>
 
           <div className="mt-6 grid gap-6 md:grid-cols-2">
