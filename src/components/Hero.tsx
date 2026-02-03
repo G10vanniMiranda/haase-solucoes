@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { WHATSAPP_LINK } from "../lib/constants";
@@ -17,33 +17,29 @@ export function Hero() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
                     <p className="text-xs font-semibold uppercase tracking-[0.2em] text-emerald-200">
-                        Consultoria ambiental e segurança do trabalho
+                        HAASE - Assessoria e Consultoria em Segurança do Trabalho e Meio Ambiente
                     </p>
 
                     <p className="text-xs font-medium text-emerald-100">
-                        Atuação especializada para empresas de Porto Velho – RO e região.
+                        Atuação técnica e integrada com foco em conformidade legal, segurança
+                        operacional e sustentabilidade.
                     </p>
 
-
                     <h1 className="text-3xl font-bold leading-tight md:text-4xl">
-                        Soluções completas em Segurança do Trabalho e Meio Ambiente
-                        para a sua empresa estar em conformidade e protegida.
+                        Soluções técnicas completas em Segurança do Trabalho e Meio Ambiente
                     </h1>
 
                     <p className="text-sm md:text-base text-emerald-50/90">
-                        A Haase Soluções atua com programas, laudos, licenciamento e treinamento,
-                        unindo <span className="font-semibold">segurança, saúde ocupacional</span> e{" "}
-                        <span className="font-semibold">sustentabilidade</span> para reduzir riscos,
-                        evitar multas e garantir tranquilidade ao seu negócio em{" "}
-                        <span className="font-semibold">Porto Velho – RO e região</span>.
+                        A HAASE atua de forma integrada na gestão de riscos ocupacionais e ambientais,
+                        oferecendo assessoria técnica especializada, perícias e regularização legal
+                        de empreendimentos.
                     </p>
 
-
                     <ul className="grid gap-3 text-sm md:grid-cols-2">
-                        <FeatureItem>Programas e laudos ambientais e ocupacionais</FeatureItem>
-                        <FeatureItem>Adequação às normas ambientais e de segurança</FeatureItem>
-                        <FeatureItem>Redução de riscos, acidentes e passivos trabalhistas</FeatureItem>
-                        <FeatureItem>Treinamentos para equipes e gestores</FeatureItem>
+                        <FeatureItem>Atuação integrada em SST e Meio Ambiente</FeatureItem>
+                        <FeatureItem>Experiência em obras, empresas e unidades de saúde</FeatureItem>
+                        <FeatureItem>Forte embasamento técnico e legal</FeatureItem>
+                        <FeatureItem>Atendimento personalizado</FeatureItem>
                     </ul>
 
                     {/* BOTÕES COM ANIMAÇÃO */}
@@ -69,10 +65,10 @@ export function Hero() {
                             className="inline-flex"
                         >
                             <Link
-                                href="/seguranca-do-trabalho"
+                                href="/servicos"
                                 className="inline-flex flex-1 items-center justify-center rounded-full border border-emerald-300 px-6 py-2.5 text-sm font-semibold text-emerald-50 transition-colors hover:bg-emerald-700/90"
                             >
-                                Ver soluções em Segurança do Trabalho
+                                Ver serviços
                             </Link>
                         </motion.div>
                     </div>
@@ -110,21 +106,24 @@ function AreasDeAtuacao() {
                     Áreas de atuação
                 </p>
                 <h2 className="mt-2 text-xl font-bold text-slate-900">
-                    Segurança, saúde e meio ambiente em um só parceiro.
+                    Segurança do Trabalho, Perícias e Meio Ambiente em um só parceiro.
                 </h2>
 
-                <div className="mt-4 grid gap-3 sm:grid-cols-2">
+                <div className="mt-4 grid gap-3 sm:grid-cols-2 sm:auto-rows-fr">
                     <ActuationCard titulo="Segurança do trabalho" href="/seguranca-do-trabalho">
-                        Programas e laudos ocupacionais para proteger equipes e reduzir acidentes.
+                        Assessoria e consultoria técnica, documentos legais (PGR, LTCAT, APR, POPs),
+                        treinamentos conforme NR's, DDS, gestão de EPI/EPC e apoio ao SESMT.
+                    </ActuationCard>
+                    <ActuationCard titulo="Perícias judiciais" href="/pericias-judiciais">
+                        Perícias e assistência técnica em insalubridade, periculosidade e meio ambiente,
+                        com laudos, pareceres e quesitos.
                     </ActuationCard>
                     <ActuationCard titulo="Meio ambiente" href="/meio-ambiente">
-                        Licenciamento, relatórios e planos de controle ambiental para conformidade legal.
+                        Licenciamento ambiental, auditorias, perícias ambientais, gestão ambiental,
+                        programas e planos de resíduos e sustentabilidade.
                     </ActuationCard>
-                    <ActuationCard titulo="Saúde & Sustentabilidade">
-                        Gestão de resíduos, supressão vegetal e ações focadas em sustentabilidade.
-                    </ActuationCard>
-                    <ActuationCard titulo="Treinamentos">
-                        Capacitações para colaboradores e gestores, com foco em prevenção e boas práticas.
+                    <ActuationCard titulo="Ergonomia e riscos psicossociais" href="/ergonomia-e-riscos-psicossociais">
+                        Análises ergonômicas, gestão de riscos psicossociais e integração ao PGR (NR 01).
                     </ActuationCard>
                 </div>
 
@@ -152,7 +151,7 @@ function ActuationCard({
 }) {
     const content = (
         <div
-            className={`rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:shadow-md ${href ? "hover:bg-emerald-50 cursor-pointer" : ""
+            className={`h-full rounded-xl border border-slate-200 bg-slate-50 p-4 transition hover:shadow-md ${href ? "hover:bg-emerald-50 cursor-pointer" : ""
                 }`}
         >
             <p className="text-xs font-semibold text-emerald-700">{titulo}</p>
@@ -170,3 +169,4 @@ function ActuationCard({
 
     return content;
 }
+

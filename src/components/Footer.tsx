@@ -186,12 +186,12 @@ export function Footer() {
                     <p>
                         Desenvolvido por{" "}
                         <a
-                            href="https://mi7anda.com.br"
+                            href="https://giovannimiranda.com.br"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="font-semibold text-emerald-300 hover:text-emerald-200 transition"
                         >
-                            Mi7anda Agência de Marketing
+                            Mi7anda - Agência de Marketing
                         </a>
                         .
                     </p>

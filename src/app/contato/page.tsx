@@ -1,10 +1,46 @@
-"use client";
+﻿"use client";
 
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, MessageCircle } from "lucide-react";
 import { WHATSAPP_LINK } from "../../lib/constants";
+import { useState } from "react";
 
 export default function ContatoPage() {
+    const [formData, setFormData] = useState({
+        nome: "",
+        empresa: "",
+        email: "",
+        mensagem: "",
+    });
+    const [errors, setErrors] = useState<{ nome?: string; email?: string; mensagem?: string }>({});
+    const [submitted, setSubmitted] = useState(false);
+
+    function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+        if (errors[name as "nome" | "email" | "mensagem"]) {
+            setErrors((prev) => ({ ...prev, [name]: undefined }));
+        }
+    }
+
+    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+        e.preventDefault();
+
+        const nextErrors: { nome?: string; email?: string; mensagem?: string } = {};
+        if (!formData.nome.trim()) nextErrors.nome = "Informe seu nome.";
+        if (!formData.email.trim()) nextErrors.email = "Informe seu e-mail.";
+        if (!formData.mensagem.trim()) nextErrors.mensagem = "Descreva brevemente a situaÃ§Ã£o.";
+
+        setErrors(nextErrors);
+        if (Object.keys(nextErrors).length > 0) {
+            setSubmitted(false);
+            return;
+        }
+
+        setSubmitted(true);
+        setFormData({ nome: "", empresa: "", email: "", mensagem: "" });
+    }
+
     return (
         <main className="bg-white text-slate-900">
             {/* HERO / INTRO */}
@@ -95,7 +131,7 @@ export default function ContatoPage() {
                         </div>
                     </motion.div>
 
-                    {/* COLUNA DIREITA – BLOCO DE CONTATO / FORMULARIO SIMPLES */}
+                    {/* COLUNA DIREITA – BLOCO DE CONTATO / FORMULÁRIO SIMPLES */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
@@ -148,16 +184,22 @@ export default function ContatoPage() {
                                 envie diretamente pelo WhatsApp.
                             </p>
 
-                            <form className="mt-4 space-y-3">
+                            <form className="mt-4 space-y-3" onSubmit={handleSubmit}>
                                 <div className="space-y-1">
                                     <label className="block text-[11px] font-medium text-slate-700">
                                         Nome completo
                                     </label>
                                     <input
                                         type="text"
+                                        name="nome"
+                                        value={formData.nome}
+                                        onChange={handleChange}
                                         className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-xs outline-none ring-emerald-500/30 focus:border-emerald-500 focus:ring"
                                         placeholder="Digite seu nome"
                                     />
+                                    {errors.nome && (
+                                        <p className="text-[10px] text-red-600">{errors.nome}</p>
+                                    )}
                                 </div>
 
                                 <div className="space-y-1">
@@ -166,6 +208,9 @@ export default function ContatoPage() {
                                     </label>
                                     <input
                                         type="text"
+                                        name="empresa"
+                                        value={formData.empresa}
+                                        onChange={handleChange}
                                         className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-xs outline-none ring-emerald-500/30 focus:border-emerald-500 focus:ring"
                                         placeholder="Nome da empresa"
                                     />
@@ -177,9 +222,15 @@ export default function ContatoPage() {
                                     </label>
                                     <input
                                         type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
                                         className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-xs outline-none ring-emerald-500/30 focus:border-emerald-500 focus:ring"
                                         placeholder="email@empresa.com"
                                     />
+                                    {errors.email && (
+                                        <p className="text-[10px] text-red-600">{errors.email}</p>
+                                    )}
                                 </div>
 
                                 <div className="space-y-1">
@@ -188,23 +239,29 @@ export default function ContatoPage() {
                                     </label>
                                     <textarea
                                         rows={4}
+                                        name="mensagem"
+                                        value={formData.mensagem}
+                                        onChange={handleChange}
                                         className="w-full rounded-md border border-slate-300 bg-white px-3 py-2 text-xs outline-none ring-emerald-500/30 focus:border-emerald-500 focus:ring resize-none"
                                         placeholder="Ex.: Precisamos regularizar documentação de segurança do trabalho / licenciamento ambiental / atender exigência de fiscalização..."
                                     />
+                                    {errors.mensagem && (
+                                        <p className="text-[10px] text-red-600">{errors.mensagem}</p>
+                                    )}
                                 </div>
 
                                 <button
-                                    type="button"
-                                    className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-emerald-700 px-4 py-2 text-[11px] font-semibold text-white shadow-sm transition hover:bg-emerald-800"
+                                    type="submit"
+                                    className="mt-2 inline-flex w-full items-center justify-center rounded-full bg-emerald-700 px-4 py-2 text-[11px] font-semibold text-white shadow-sm transition hover:bg-emerald-800 cursor-pointer"
                                 >
-                                    Enviar (exemplo de formulário – integrar depois)
+                                    Enviar mensagem
                                 </button>
+                                {submitted && (
+                                    <p className="text-[11px] text-emerald-700">
+                                        Mensagem enviada com sucesso. Em breve retornaremos o contato.
+                                    </p>
+                                )}
                             </form>
-
-                            <p className="mt-3 text-[10px] text-slate-500">
-                                Este formulário é apenas ilustrativo. Para um retorno mais
-                                rápido, utilize o atendimento pelo WhatsApp.
-                            </p>
                         </div>
                     </motion.div>
                 </div>
@@ -212,3 +269,4 @@ export default function ContatoPage() {
         </main>
     );
 }
+

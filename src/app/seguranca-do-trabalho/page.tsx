@@ -1,12 +1,13 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Content from "./content";
 
 export const metadata: Metadata = {
-    title: "Segurança do Trabalho em Porto Velho – RO | Haase Soluções",
+    title: "Segurança do Trabalho | HAASE Assessoria e Consultoria",
     description:
-        "Consultoria em Segurança do Trabalho em Porto Velho – RO. Programas, laudos, diagnósticos de risco e treinamentos para reduzir acidentes, afastamentos e passivos trabalhistas.",
+        "Assessoria e consultoria em SST com gestão completa de segurança do trabalho, documentos legais e treinamentos conforme NR's.",
 };
 
 export default function SegurancaDoTrabalhoPage() {
     return <Content />;
 }
+

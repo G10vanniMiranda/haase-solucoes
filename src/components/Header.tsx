@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import Image from "next/image";
@@ -110,7 +110,7 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -20 }}
                     transition={{ duration: 0.25, ease: "easeOut" }}
-                    className="fixed inset-0 z-[9999] bg-white md:hidden overflow-y-auto"
+                    className="fixed inset-0 z-9999 bg-white md:hidden overflow-y-auto"
                     aria-modal="true"
                     role="dialog"
                 >
@@ -119,7 +119,7 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
                         <span className="text-sm font-semibold text-slate-900">Menu</span>
                         <button
                             onClick={onClose}
-                            className="p-2 rounded-lg hover:bg-slate-100 transition"
+                            className="p-2 rounded-lg hover:bg-slate-100 transition cursor-pointer"
                             aria-label="Fechar menu"
                         >
                             <X size={22} />
@@ -133,7 +133,7 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
                             onClick={onClose}
                             className="py-1 hover:text-emerald-700 transition"
                         >
-                            Início
+                            InÃ­cio
                         </Link>
                         <Link
                             href="/sobre"
@@ -147,7 +147,7 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
                             onClick={onClose}
                             className="py-1 hover:text-emerald-700 transition"
                         >
-                            Segurança do Trabalho
+                            SeguranÃ§a do Trabalho
                         </Link>
                         <Link
                             href="/meio-ambiente"
@@ -182,3 +182,4 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
         </AnimatePresence>
     );
 }
+
