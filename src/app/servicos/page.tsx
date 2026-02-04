@@ -41,6 +41,7 @@ export default function ServicosPage() {
                         <ServiceItem>Assessoria e consultoria em Segurança do Trabalho</ServiceItem>
                         <ServiceItem>Acompanhamento técnico de obras</ServiceItem>
                         <ServiceItem>Documentos legais (PGR, LTCAT, APR, POPs)</ServiceItem>
+                        <ServiceItem>Envio de eventos de SST para o eSocial</ServiceItem>
                         <ServiceItem>Implantação e acompanhamento de rotinas conforme NR&apos;s</ServiceItem>
                         <ServiceItem>Gestão de EPI e EPC</ServiceItem>
                         <ServiceItem>DDS - Diálogo Diário de Segurança</ServiceItem>

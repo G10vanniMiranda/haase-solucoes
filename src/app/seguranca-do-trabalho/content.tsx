@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { WHATSAPP_LINK } from "../../lib/constants";
+import Link from "next/link";
 import React from "react";
 
 export default function Content() {
@@ -141,6 +142,26 @@ export default function Content() {
               <li>Orientação e fiscalização do uso</li>
             </ul>
           </motion.div>
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 py-12 md:py-16">
+        <div className="mx-auto max-w-6xl px-4">
+          <div className="rounded-2xl border border-emerald-100 bg-white p-6 shadow-sm md:p-8 md:flex md:items-center md:justify-between md:gap-8">
+            <div>
+              <h2 className="text-xl font-bold text-slate-900">eSocial - Eventos de SST</h2>
+              <p className="mt-2 max-w-2xl text-sm text-slate-600">
+                Gestão completa e envio dos eventos S-2210, S-2220 e S-2240 com base técnica nos documentos
+                de SST e conformidade com o Manual de Orientação do eSocial.
+              </p>
+            </div>
+            <Link
+              href="/esocial"
+              className="mt-5 inline-flex rounded-full bg-emerald-700 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 md:mt-0"
+            >
+              Ver detalhes do serviço
+            </Link>
+          </div>
         </div>
       </section>
 
