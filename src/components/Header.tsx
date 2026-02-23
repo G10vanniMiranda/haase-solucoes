@@ -22,7 +22,7 @@ export function Header() {
                 className="sticky top-0 z-50 bg-white/90 border-b border-slate-200 backdrop-blur"
                 aria-label="Cabeçalho principal"
             >
-                <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4">
+                <div className="mx-auto flex h-20 max-w-6xl items-center justify-between px-4">
                     {/* LOGO */}
                     <Link
                         href="/"
@@ -32,10 +32,10 @@ export function Header() {
                         <Image
                             src="/logo.jpeg"
                             alt="Logo Haase"
-                            width={48}
-                            height={48}
+                            width={62}
+                            height={62}
                             priority
-                            className="h-12 w-12 rounded-md object-contain ring-1 ring-slate-200"
+                            className="h-20 w-20 rounded-md object-contain ring-1 ring-slate-200"
                         />
                     </Link>
 
