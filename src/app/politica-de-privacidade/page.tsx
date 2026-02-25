@@ -1,7 +1,12 @@
-export const metadata = {
+﻿import type { Metadata } from "next";
+
+export const metadata: Metadata = {
     title: "Política de Privacidade | Haase Soluções",
     description:
         "Política de Privacidade da Haase Soluções em Segurança do Trabalho e Meio Ambiente. Saiba como tratamos seus dados conforme a LGPD.",
+    alternates: {
+        canonical: "/politica-de-privacidade",
+    },
 };
 
 export default function PoliticaPrivacidade() {
@@ -18,10 +23,10 @@ export default function PoliticaPrivacidade() {
 
                 <p>
                     A Haase Soluções em Segurança do Trabalho e Meio Ambiente, sediada em
-                    Porto Velho – RO, respeita sua privacidade e garante a segurança dos
+                    Porto Velho - RO, respeita sua privacidade e garante a segurança dos
                     dados pessoais coletados em nossas interações. Esta Política explica
                     como tratamos suas informações conforme a Lei Geral de Proteção de
-                    Dados (LGPD – Lei 13.709/2018).
+                    Dados (LGPD - Lei 13.709/2018).
                 </p>
                 <br />
 
@@ -114,7 +119,7 @@ export default function PoliticaPrivacidade() {
 
                 <h2>10. Controlador de Dados</h2>
                 <p>
-                    Haase Soluções em Segurança do Trabalho e Meio Ambiente – Porto Velho,
+                    Haase Soluções em Segurança do Trabalho e Meio Ambiente - Porto Velho,
                     RO.
                 </p>
             </div>

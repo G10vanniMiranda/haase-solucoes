@@ -1,4 +1,4 @@
-import type { Metadata, Viewport } from "next";
+﻿import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Footer } from "../components/Footer";
@@ -14,18 +14,14 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// METADADOS GLOBAIS
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.haasesolucoes.com.br"),
-
   title: {
     default: "Haase Soluções",
     template: "%s | Haase Soluções",
   },
-
   description:
     "Empresa especializada em Segurança do Trabalho e Meio Ambiente. Laudos, programas, licenciamento ambiental e treinamentos para empresas em Rondônia.",
-
   keywords: [
     "segurança do trabalho",
     "meio ambiente",
@@ -35,13 +31,10 @@ export const metadata: Metadata = {
     "treinamentos NR",
     "Haase Soluções",
   ],
-
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
   },
-
   openGraph: {
     type: "website",
     locale: "pt_BR",
@@ -49,33 +42,27 @@ export const metadata: Metadata = {
     title: "Haase Soluções",
     description:
       "Consultoria em Segurança do Trabalho e Meio Ambiente para empresas. Atuação com laudos, programas, treinamentos e licenciamento ambiental.",
-    url: "https://www.haasesolucoes.com.br",
+    url: "/",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image",
         width: 1200,
         height: 630,
         alt: "Haase Soluções em Segurança do Trabalho e Meio Ambiente",
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: "Haase Soluções",
     description:
       "Segurança do Trabalho e Meio Ambiente para empresas de todos os portes.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image"],
   },
-
   robots: {
     index: true,
     follow: true,
     nocache: false,
-  },
-
-  alternates: {
-    canonical: "https://www.haasesolucoes.com.br",
   },
 };
 

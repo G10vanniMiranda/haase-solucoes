@@ -1,7 +1,12 @@
-export const metadata = {
+﻿import type { Metadata } from "next";
+
+export const metadata: Metadata = {
     title: "Termos de Uso | Haase Soluções",
     description:
         "Termos de Uso do site Haase Soluções em Segurança do Trabalho e Meio Ambiente. Conheça as regras de utilização do site.",
+    alternates: {
+        canonical: "/termos-de-uso",
+    },
 };
 
 export default function TermosDeUsoPage() {
@@ -68,8 +73,8 @@ export default function TermosDeUsoPage() {
 
                 <h2>5. Direitos autorais</h2>
                 <p>
-                    Todo o conteúdo do site – textos, imagens, estrutura, logotipo, layout
-                    e elementos visuais – é protegido por direitos autorais. A cópia sem
+                    Todo o conteúdo do site - textos, imagens, estrutura, logotipo, layout
+                    e elementos visuais - é protegido por direitos autorais. A cópia sem
                     permissão é proibida.
                 </p>
                 <br />
@@ -98,7 +103,7 @@ export default function TermosDeUsoPage() {
                 <h2>8. Foro</h2>
                 <p>
                     Fica eleito o foro da Comarca de{" "}
-                    <strong>Porto Velho – RO</strong> para resolução de qualquer disputa
+                    <strong>Porto Velho - RO</strong> para resolução de qualquer disputa
                     relacionada a estes Termos.
                 </p>
                 <br />
@@ -107,10 +112,10 @@ export default function TermosDeUsoPage() {
                 <p>Em caso de dúvidas, entre em contato:</p>
                 <ul>
                     <li>
-                        📧 <strong>haasesolucoes@gmail.com</strong>
+                        <strong>haasesolucoes@gmail.com</strong>
                     </li>
                     <li>
-                        📱 <strong>(69) 99246-4034</strong>
+                        <strong>(69) 99246-4034</strong>
                     </li>
                 </ul>
             </div>
