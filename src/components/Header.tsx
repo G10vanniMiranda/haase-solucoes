@@ -35,7 +35,7 @@ export function Header() {
                             width={62}
                             height={62}
                             priority
-                            className="h-20 w-20 rounded-md object-contain ring-1 ring-slate-200"
+                            className="h-32 w-32 rounded-md object-contain"
                         />
                     </Link>
 
