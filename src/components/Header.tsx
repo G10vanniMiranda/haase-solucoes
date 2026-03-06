@@ -133,7 +133,7 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
                             onClick={onClose}
                             className="py-1 hover:text-emerald-700 transition"
                         >
-                            InÃ­cio
+                            Início
                         </Link>
                         <Link
                             href="/sobre"
@@ -147,7 +147,7 @@ function MobileMenu({ open, onClose }: MobileMenuProps) {
                             onClick={onClose}
                             className="py-1 hover:text-emerald-700 transition"
                         >
-                            SeguranÃ§a do Trabalho
+                            Segurança do Trabalho
                         </Link>
                         <Link
                             href="/meio-ambiente"
