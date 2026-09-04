@@ -1,32 +1,45 @@
-﻿"use client";
-
-import { motion } from "framer-motion";
 import Link from "next/link";
-import { WHATSAPP_LINK } from "../../lib/constants";
+import { MotionH1, MotionP, MotionSection, ReducedMotion } from "../../components/MotionPrimitives";
+import type { AcquisitionContext } from "../../lib/acquisition/context";
+import { measurementAttributesForAcquisition } from "../../lib/measurement/acquisition";
+import { buildWhatsAppLink } from "../../lib/whatsapp";
+
+const servicesSpecialistContext = {
+    page: "services",
+    position: "section",
+    intent: "talk-to-specialist",
+} satisfies AcquisitionContext;
+
+const servicesContactContext = {
+    page: "services",
+    position: "section",
+    intent: "contact",
+} satisfies AcquisitionContext;
 
 export default function ServicosPage() {
     return (
-        <main className="bg-white text-slate-900">
+        <ReducedMotion>
+        <main id="main-content" tabIndex={-1} className="bg-white text-slate-900">
             <section className="border-b border-slate-200 bg-slate-50 py-12 md:py-20">
                 <div className="mx-auto max-w-6xl px-4">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                    <MotionH1
+                        initial={{ y: 20 }}
+                        animate={{ y: 0 }}
                         transition={{ duration: 0.6 }}
                         className="text-3xl font-bold md:text-4xl"
                     >
                         Serviços em Segurança do Trabalho, Perícias e Meio Ambiente
-                    </motion.h1>
+                    </MotionH1>
 
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                    <MotionP
+                        initial={{ y: 20 }}
+                        animate={{ y: 0 }}
                         transition={{ duration: 0.7, delay: 0.1 }}
                         className="mt-3 max-w-2xl text-sm text-slate-600"
                     >
                         A HAASE oferece soluções técnicas completas para empresas, obras e instituições que
                         buscam conformidade legal, segurança operacional e responsabilidade ambiental.
-                    </motion.p>
+                    </MotionP>
                 </div>
             </section>
 
@@ -106,7 +119,11 @@ export default function ServicosPage() {
                                 Nossa equipe retorna com as melhores opções para o seu caso.
                             </p>
                             <a
-                                href={WHATSAPP_LINK}
+                                href={buildWhatsAppLink(servicesSpecialistContext)}
+                                {...measurementAttributesForAcquisition(
+                                    servicesSpecialistContext,
+                                    "whatsapp_click"
+                                )}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center rounded-full bg-emerald-700 px-6 py-2.5 text-xs font-semibold text-white shadow-sm transition hover:bg-emerald-800 animate-pulse"
@@ -129,7 +146,11 @@ export default function ServicosPage() {
                     </p>
 
                     <a
-                        href={WHATSAPP_LINK}
+                        href={buildWhatsAppLink(servicesContactContext)}
+                        {...measurementAttributesForAcquisition(
+                            servicesContactContext,
+                            "whatsapp_click"
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-6 inline-flex rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100"
@@ -139,6 +160,7 @@ export default function ServicosPage() {
                 </div>
             </section>
         </main>
+        </ReducedMotion>
     );
 }
 
@@ -156,7 +178,7 @@ function ServiceGroup({
     linkLabel: string;
 }) {
     return (
-        <motion.section
+        <MotionSection
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -173,7 +195,7 @@ function ServiceGroup({
                 </Link>
             </div>
             <ul className="mt-4 space-y-2 text-xs text-slate-700 list-disc pl-4">{children}</ul>
-        </motion.section>
+        </MotionSection>
     );
 }
 

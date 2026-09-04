@@ -1,20 +1,13 @@
 ﻿import type { Metadata } from "next";
 import Content from "./content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Meio Ambiente | HAASE Assessoria e Consultoria",
+export const metadata: Metadata = createPageMetadata({
+    title: "Meio Ambiente",
     description:
         "Licenciamento ambiental, auditorias, perícias ambientais e gestão ambiental com foco em regularização e sustentabilidade.",
-    alternates: {
-        canonical: "/meio-ambiente",
-    },
-    openGraph: {
-        title: "Meio Ambiente | HAASE",
-        description:
-            "Licenciamento ambiental, auditorias e gestão ambiental com foco em conformidade legal.",
-        url: "/meio-ambiente",
-    },
-};
+    path: "/meio-ambiente",
+});
 
 export default function MeioAmbientePage() {
     return <Content />;

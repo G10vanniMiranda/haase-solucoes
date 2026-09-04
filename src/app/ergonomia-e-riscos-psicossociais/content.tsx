@@ -1,23 +1,38 @@
-﻿"use client";
+import { MotionA, MotionDiv, MotionH1, MotionP, ReducedMotion } from "../../components/MotionPrimitives";
+import type { AcquisitionContext } from "../../lib/acquisition/context";
+import { measurementAttributesForAcquisition } from "../../lib/measurement/acquisition";
+import { buildWhatsAppLink } from "../../lib/whatsapp";
 
-import { motion } from "framer-motion";
-import { WHATSAPP_LINK } from "../../lib/constants";
+const ergonomicsHeroContext = {
+    page: "ergonomics-and-psychosocial-risks",
+    service: "ergonomics-and-psychosocial-risks",
+    position: "hero-primary",
+    intent: "talk-to-specialist",
+} satisfies AcquisitionContext;
+
+const ergonomicsSectionContext = {
+    page: "ergonomics-and-psychosocial-risks",
+    service: "ergonomics-and-psychosocial-risks",
+    position: "section",
+    intent: "talk-to-specialist",
+} satisfies AcquisitionContext;
 
 export default function Content() {
     return (
-        <main className="bg-white text-slate-900">
+        <ReducedMotion>
+        <main id="main-content" tabIndex={-1} className="bg-white text-slate-900">
             <section className="border-b border-slate-200 bg-slate-50 py-12 md:py-20">
                 <div className="mx-auto max-w-6xl px-4">
-                    <motion.h1
+                    <MotionH1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         className="text-3xl font-bold md:text-4xl"
                     >
                         Ergonomia e Riscos Psicossociais
-                    </motion.h1>
+                    </MotionH1>
 
-                    <motion.p
+                    <MotionP
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.1 }}
@@ -25,10 +40,14 @@ export default function Content() {
                     >
                         Soluções completas em ergonomia ocupacional e gestão de riscos psicossociais,
                         em conformidade com a NR 01 - Gerenciamento de Riscos Ocupacionais.
-                    </motion.p>
+                    </MotionP>
 
-                    <motion.a
-                        href={WHATSAPP_LINK}
+                    <MotionA
+                        href={buildWhatsAppLink(ergonomicsHeroContext)}
+                        {...measurementAttributesForAcquisition(
+                            ergonomicsHeroContext,
+                            "whatsapp_click"
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
                         initial={{ opacity: 0, y: 15 }}
@@ -37,7 +56,7 @@ export default function Content() {
                         className="mt-6 inline-flex rounded-full bg-emerald-700 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 animate-pulse"
                     >
                         Falar com especialista em Ergonomia
-                    </motion.a>
+                    </MotionA>
                 </div>
             </section>
 
@@ -170,7 +189,11 @@ export default function Content() {
                     </p>
 
                     <a
-                        href={WHATSAPP_LINK}
+                        href={buildWhatsAppLink(ergonomicsSectionContext)}
+                        {...measurementAttributesForAcquisition(
+                            ergonomicsSectionContext,
+                            "whatsapp_click"
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-6 inline-flex rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 animate-pulse"
@@ -180,6 +203,7 @@ export default function Content() {
                 </div>
             </section>
         </main>
+        </ReducedMotion>
     );
 }
 
@@ -191,7 +215,7 @@ function InfoCard({
     children: React.ReactNode;
 }) {
     return (
-        <motion.div
+        <MotionDiv
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -200,7 +224,7 @@ function InfoCard({
         >
             <h3 className="text-sm font-semibold text-slate-900">{titulo}</h3>
             <ul className="mt-3 space-y-2 list-disc pl-4">{children}</ul>
-        </motion.div>
+        </MotionDiv>
     );
 }
 

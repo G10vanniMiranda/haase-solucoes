@@ -1,20 +1,13 @@
 ﻿import type { Metadata } from "next";
 import Content from "./content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "eSocial SST | HAASE Assessoria e Consultoria",
+export const metadata: Metadata = createPageMetadata({
+    title: "eSocial SST",
     description:
         "Gestão completa e envio de eventos de SST para o eSocial com conformidade legal, segurança jurídica e suporte técnico especializado.",
-    alternates: {
-        canonical: "/esocial",
-    },
-    openGraph: {
-        title: "eSocial SST | HAASE",
-        description:
-            "Envio e gestão de eventos de SST no eSocial com suporte técnico especializado.",
-        url: "/esocial",
-    },
-};
+    path: "/esocial",
+});
 
 export default function EsocialPage() {
     return <Content />;

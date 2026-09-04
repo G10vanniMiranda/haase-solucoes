@@ -1,20 +1,13 @@
 ﻿import type { Metadata } from "next";
 import Content from "./content";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Perícias Judiciais | HAASE Assessoria e Consultoria",
+export const metadata: Metadata = createPageMetadata({
+    title: "Perícias Judiciais",
     description:
         "Perícias judiciais de insalubridade e periculosidade, assistência técnica e laudos fundamentados em normas legais.",
-    alternates: {
-        canonical: "/pericias-judiciais",
-    },
-    openGraph: {
-        title: "Perícias Judiciais | HAASE",
-        description:
-            "Atuação pericial em insalubridade, periculosidade e assistência técnica trabalhista.",
-        url: "/pericias-judiciais",
-    },
-};
+    path: "/pericias-judiciais",
+});
 
 export default function PericiasJudiciaisPage() {
     return <Content />;

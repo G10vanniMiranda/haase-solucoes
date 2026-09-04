@@ -1,15 +1,22 @@
-﻿"use client";
-
 import Link from "next/link";
-import { WHATSAPP_LINK } from "../lib/constants";
-import { motion } from "framer-motion";
+import type { AcquisitionContext } from "../lib/acquisition/context";
+import { measurementAttributesForAcquisition } from "../lib/measurement/acquisition";
+import { buildWhatsAppLink } from "../lib/whatsapp";
+import { MotionA, MotionDiv, ReducedMotion } from "./MotionPrimitives";
+
+const heroWhatsAppContext = {
+    page: "home",
+    position: "hero-primary",
+    intent: "request-quote",
+} satisfies AcquisitionContext;
 
 export function Hero() {
     return (
+        <ReducedMotion>
         <section className="border-b border-slate-200 bg-linear-to-br from-emerald-900 via-emerald-800 to-emerald-900 text-white">
             <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 md:grid-cols-2 md:py-24">
                 {/* COLUNA ESQUERDA */}
-                <motion.div
+                <MotionDiv
                     className="space-y-6"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
@@ -41,11 +48,14 @@ export function Hero() {
                         <FeatureItem>Forte embasamento técnico e legal</FeatureItem>
                         <FeatureItem>Atendimento personalizado</FeatureItem>
                     </ul>
-
                     {/* BOTÕES COM ANIMAÇÃO */}
                     <div className="flex flex-col gap-3 pt-2 sm:flex-row">
-                        <motion.a
-                            href={WHATSAPP_LINK}
+                        <MotionA
+                            href={buildWhatsAppLink(heroWhatsAppContext)}
+                            {...measurementAttributesForAcquisition(
+                                heroWhatsAppContext,
+                                "whatsapp_click"
+                            )}
                             target="_blank"
                             rel="noopener noreferrer"
                             whileHover={{ scale: 1.07, y: -2 }}
@@ -56,9 +66,9 @@ export function Hero() {
                             aria-label="Solicitar orçamento pelo WhatsApp"
                         >
                             Solicitar um orçamento pelo WhatsApp
-                        </motion.a>
+                        </MotionA>
 
-                        <motion.div
+                        <MotionDiv
                             whileHover={{ scale: 1.04, y: -1 }}
                             whileTap={{ scale: 0.97, y: 0 }}
                             transition={{ type: "spring", stiffness: 260, damping: 18 }}
@@ -70,14 +80,15 @@ export function Hero() {
                             >
                                 Ver serviços
                             </Link>
-                        </motion.div>
+                        </MotionDiv>
                     </div>
-                </motion.div>
+                </MotionDiv>
 
                 {/* COLUNA DIREITA */}
                 <AreasDeAtuacao />
             </div>
         </section>
+        </ReducedMotion>
     );
 }
 
@@ -95,7 +106,7 @@ function FeatureItem({ children }: { children: React.ReactNode }) {
 function AreasDeAtuacao() {
     return (
         <div className="flex items-center">
-            <motion.div
+            <MotionDiv
                 className="w-full rounded-2xl bg-white/95 p-6 text-sm text-slate-900 shadow-lg md:p-7"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -135,7 +146,7 @@ function AreasDeAtuacao() {
                         Atendimento especializado para empresas que buscam segurança jurídica, operacional e ambiental.
                     </p>
                 </div>
-            </motion.div>
+            </MotionDiv>
         </div>
     );
 }

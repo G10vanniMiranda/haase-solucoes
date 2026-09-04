@@ -1,9 +1,26 @@
-"use client";
-
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, Mail, MapPin, Instagram, MessageCircle } from "lucide-react";
-import { WHATSAPP_LINK } from "../lib/constants";
+import type { AcquisitionContext } from "../lib/acquisition/context";
+import { measurementAttributesForAcquisition } from "../lib/measurement/acquisition";
+import { buildWhatsAppLink } from "../lib/whatsapp";
+
+const footerContactContext = {
+    position: "footer",
+    intent: "contact",
+} satisfies AcquisitionContext;
+
+const footerSpecialistContext = {
+    position: "footer",
+    intent: "talk-to-specialist",
+} satisfies AcquisitionContext;
+
+const footerPhoneContext = {
+    position: "footer",
+    intent: "contact",
+} satisfies AcquisitionContext;
+
+const CONTACT_EMAIL = "haasesolucoes@gmail.com";
 
 export function Footer() {
     const currentYear = new Date().getFullYear();
@@ -16,13 +33,14 @@ export function Footer() {
                     {/* BLOCO INSTITUCIONAL */}
                     <div className="space-y-4">
                         <div className="flex items-center gap-3">
-                            <div className="h-11 w-11 overflow-hidden rounded-md bg-white/90 ring-1 ring-emerald-800/50 flex items-center justify-center">
+                            <div className="relative h-14 w-36 shrink-0 overflow-hidden rounded-md bg-white ring-1 ring-emerald-800/50">
                                 <Image
-                                    src="/logo.jpeg"
-                                    alt="Logo Haase Soluções"
-                                    width={44}
-                                    height={44}
-                                    className="h-10 w-10 object-contain"
+                                    src="/logo.jpg"
+                                    alt="Haase Soluções"
+                                    width={1280}
+                                    height={719}
+                                    sizes="410px"
+                                    className="absolute left-1/2 top-1/2 h-auto w-[25.625rem] max-w-none -translate-x-1/2 -translate-y-1/2"
                                 />
                             </div>
                             <div>
@@ -105,16 +123,34 @@ export function Footer() {
                             Contato
                         </h3>
                         <div className="mt-3 space-y-2 text-xs text-slate-300">
-                            <p className="flex items-center gap-2">
-                                <Phone size={14} className="text-emerald-300" />
-                                <span>(69) 99246-4034</span>
+                            <p>
+                                <a
+                                    href="tel:+5569992464034"
+                                    {...measurementAttributesForAcquisition(
+                                        footerPhoneContext,
+                                        "phone_click"
+                                    )}
+                                    className="inline-flex min-h-11 items-center gap-2 rounded-sm hover:text-emerald-100"
+                                >
+                                    <Phone size={14} className="text-emerald-300" aria-hidden="true" focusable="false" />
+                                    <span>(69) 99246-4034</span>
+                                </a>
                             </p>
-                            <p className="flex items-center gap-2">
-                                <Mail size={14} className="text-emerald-300" />
-                                <span>haasesolucoes@gmail.com</span>
+                            <p>
+                                <a
+                                    href={`mailto:${CONTACT_EMAIL}`}
+                                    {...measurementAttributesForAcquisition(
+                                        footerContactContext,
+                                        "email_click"
+                                    )}
+                                    className="inline-flex min-h-11 items-center gap-2 rounded-sm hover:text-emerald-100"
+                                >
+                                    <Mail size={14} className="text-emerald-300" aria-hidden="true" focusable="false" />
+                                    <span>{CONTACT_EMAIL}</span>
+                                </a>
                             </p>
                             <p className="flex items-start gap-2">
-                                <MapPin size={14} className="mt-0.5 text-emerald-300" />
+                                <MapPin size={14} className="mt-0.5 text-emerald-300" aria-hidden="true" focusable="false" />
                                 <span>
                                     Atendemos empresas em{" "}
                                     <span className="font-semibold">
@@ -134,18 +170,22 @@ export function Footer() {
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="Instagram da Haase Soluções"
-                                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 hover:text-emerald-100 transition"
+                                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 hover:text-emerald-100 transition motion-reduce:transition-none"
                                 >
-                                    <Instagram size={16} />
+                                    <Instagram size={16} aria-hidden="true" focusable="false" />
                                 </a>
                                 <a
-                                    href={WHATSAPP_LINK}
+                                    href={buildWhatsAppLink(footerContactContext)}
+                                    {...measurementAttributesForAcquisition(
+                                        footerContactContext,
+                                        "whatsapp_click"
+                                    )}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="WhatsApp da Haase Soluções"
-                                    className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 hover:text-emerald-100 transition"
+                                    className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-emerald-500/40 bg-emerald-500/10 text-emerald-300 hover:bg-emerald-500/20 hover:text-emerald-100 transition motion-reduce:transition-none"
                                 >
-                                    <MessageCircle size={16} />
+                                    <MessageCircle size={16} aria-hidden="true" focusable="false" />
                                 </a>
                             </div>
                         </div>
@@ -166,10 +206,14 @@ export function Footer() {
                         </p>
                     </div>
                     <a
-                        href={WHATSAPP_LINK}
+                        href={buildWhatsAppLink(footerSpecialistContext)}
+                        {...measurementAttributesForAcquisition(
+                            footerSpecialistContext,
+                            "whatsapp_click"
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center justify-center rounded-full bg-emerald-500 px-4 py-2 text-[11px] font-semibold text-slate-950 shadow-sm hover:bg-emerald-400 transition"
+                        className="inline-flex min-h-11 items-center justify-center rounded-full bg-emerald-500 px-4 py-2 text-sm font-semibold text-slate-950 shadow-sm hover:bg-emerald-400 transition motion-reduce:transition-none"
                     >
                         Falar com um especialista
                     </a>

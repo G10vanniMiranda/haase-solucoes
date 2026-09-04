@@ -1,23 +1,38 @@
-﻿"use client";
+import { MotionA, MotionDiv, MotionH1, MotionP, ReducedMotion } from "../../components/MotionPrimitives";
+import type { AcquisitionContext } from "../../lib/acquisition/context";
+import { measurementAttributesForAcquisition } from "../../lib/measurement/acquisition";
+import { buildWhatsAppLink } from "../../lib/whatsapp";
 
-import { motion } from "framer-motion";
-import { WHATSAPP_LINK } from "../../lib/constants";
+const judicialHeroContext = {
+    page: "judicial-expertise",
+    service: "judicial-expertise",
+    position: "hero-primary",
+    intent: "talk-to-specialist",
+} satisfies AcquisitionContext;
+
+const judicialSectionContext = {
+    page: "judicial-expertise",
+    service: "judicial-expertise",
+    position: "section",
+    intent: "talk-to-specialist",
+} satisfies AcquisitionContext;
 
 export default function Content() {
     return (
-        <main className="bg-white text-slate-900">
+        <ReducedMotion>
+        <main id="main-content" tabIndex={-1} className="bg-white text-slate-900">
             <section className="border-b border-slate-200 bg-slate-50 py-12 md:py-20">
                 <div className="mx-auto max-w-6xl px-4">
-                    <motion.h1
+                    <MotionH1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         className="text-3xl font-bold md:text-4xl"
                     >
                         Perícias Judiciais - Insalubridade e Periculosidade
-                    </motion.h1>
+                    </MotionH1>
 
-                    <motion.p
+                    <MotionP
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.1 }}
@@ -25,10 +40,14 @@ export default function Content() {
                     >
                         Atuação como Perita Judicial e Assistente Técnica, com elaboração de laudos técnicos
                         fundamentados em normas legais e metodologias reconhecidas.
-                    </motion.p>
+                    </MotionP>
 
-                    <motion.a
-                        href={WHATSAPP_LINK}
+                    <MotionA
+                        href={buildWhatsAppLink(judicialHeroContext)}
+                        {...measurementAttributesForAcquisition(
+                            judicialHeroContext,
+                            "whatsapp_click"
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
                         initial={{ opacity: 0, y: 15 }}
@@ -37,13 +56,13 @@ export default function Content() {
                         className="mt-6 inline-flex rounded-full bg-emerald-700 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 animate-pulse"
                     >
                         Falar com especialista em Perícias Judiciais
-                    </motion.a>
+                    </MotionA>
                 </div>
             </section>
 
             <section className="border-b border-slate-200 py-12 md:py-16">
                 <div className="mx-auto max-w-6xl px-4 grid gap-10 md:grid-cols-2 md:items-start">
-                    <motion.div
+                    <MotionDiv
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.4 }}
@@ -61,9 +80,9 @@ export default function Content() {
                             <li>Elaboração de laudos, pareceres, quesitos e impugnações</li>
                             <li>Avaliação conforme NR 15 e NR 16</li>
                         </ul>
-                    </motion.div>
+                    </MotionDiv>
 
-                    <motion.div
+                    <MotionDiv
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.4 }}
@@ -77,7 +96,7 @@ export default function Content() {
                             <li>Relatórios claros, objetivos e fundamentados</li>
                             <li>Atendimento personalizado conforme o caso</li>
                         </ul>
-                    </motion.div>
+                    </MotionDiv>
                 </div>
             </section>
 
@@ -90,7 +109,11 @@ export default function Content() {
                     </p>
 
                     <a
-                        href={WHATSAPP_LINK}
+                        href={buildWhatsAppLink(judicialSectionContext)}
+                        {...measurementAttributesForAcquisition(
+                            judicialSectionContext,
+                            "whatsapp_click"
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-6 inline-flex rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 animate-pulse"
@@ -100,5 +123,6 @@ export default function Content() {
                 </div>
             </section>
         </main>
+        </ReducedMotion>
     );
 }

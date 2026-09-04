@@ -1,5 +1,7 @@
 import { ImageResponse } from "next/og";
 
+export const alt = "Haase Soluções em Segurança do Trabalho e Meio Ambiente";
+
 export const size = {
     width: 1200,
     height: 630,
@@ -7,7 +9,7 @@ export const size = {
 
 export const contentType = "image/png";
 
-export default function OgImage() {
+export default function OpenGraphImage() {
     return new ImageResponse(
         (
             <div

@@ -1,36 +1,55 @@
-﻿"use client";
-
-import { motion } from "framer-motion";
-import { WHATSAPP_LINK } from "../../lib/constants";
+import type { AcquisitionContext } from "../../lib/acquisition/context";
+import { measurementAttributesForAcquisition } from "../../lib/measurement/acquisition";
+import { buildWhatsAppLink } from "../../lib/whatsapp";
 import Link from "next/link";
 import React from "react";
+import { MotionA, MotionDiv, MotionH1, MotionP, ReducedMotion } from "../../components/MotionPrimitives";
+
+const workSafetyHeroContext = {
+  page: "work-safety",
+  service: "work-safety",
+  position: "hero-primary",
+  intent: "talk-to-specialist",
+} satisfies AcquisitionContext;
+
+const workSafetySectionContext = {
+  page: "work-safety",
+  service: "work-safety",
+  position: "section",
+  intent: "talk-to-specialist",
+} satisfies AcquisitionContext;
 
 export default function Content() {
   return (
-    <main className="bg-white text-slate-900">
+    <ReducedMotion>
+    <main id="main-content" tabIndex={-1} className="bg-white text-slate-900">
       <section className="border-b border-slate-200 bg-slate-50 py-12 md:py-20">
         <div className="mx-auto max-w-6xl px-4">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <MotionH1
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-3xl font-bold md:text-4xl"
           >
             Assessoria e Consultoria em SST
-          </motion.h1>
+          </MotionH1>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+          <MotionP
+            initial={{ y: 20 }}
+            animate={{ y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-3 max-w-2xl text-sm text-slate-600"
           >
             Gestão completa de Segurança do Trabalho com foco na prevenção de acidentes, conformidade legal
             e melhoria contínua das condições de trabalho.
-          </motion.p>
+          </MotionP>
 
-          <motion.a
-            href={WHATSAPP_LINK}
+          <MotionA
+            href={buildWhatsAppLink(workSafetyHeroContext)}
+            {...measurementAttributesForAcquisition(
+              workSafetyHeroContext,
+              "whatsapp_click"
+            )}
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 15 }}
@@ -39,13 +58,13 @@ export default function Content() {
             className="mt-6 inline-flex rounded-full bg-emerald-700 px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-emerald-800 animate-pulse"
           >
             Falar com especialista em Segurança do Trabalho
-          </motion.a>
+          </MotionA>
         </div>
       </section>
 
       <section className="border-b border-slate-200 py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-4 grid gap-10 md:grid-cols-2 md:items-start">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -60,9 +79,9 @@ export default function Content() {
               A HAASE oferece assessoria técnica qualificada, com foco na conformidade legal e na
               prevenção de acidentes e passivos trabalhistas.
             </p>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -79,7 +98,7 @@ export default function Content() {
               <li>DDS - Diálogo Diário de Segurança</li>
               <li>Apoio técnico ao SESMT</li>
             </ul>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
@@ -109,7 +128,7 @@ export default function Content() {
 
       <section className="border-b border-slate-200 py-12 md:py-16">
         <div className="mx-auto max-w-6xl px-4 grid gap-10 md:grid-cols-[3fr,2fr] md:items-start">
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -126,9 +145,9 @@ export default function Content() {
               <li>Auditorias internas de SST</li>
               <li>Investigação e análise de acidentes e incidentes</li>
             </ul>
-          </motion.div>
+          </MotionDiv>
 
-          <motion.div
+          <MotionDiv
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.4 }}
@@ -141,7 +160,7 @@ export default function Content() {
               <li>Controle e registros</li>
               <li>Orientação e fiscalização do uso</li>
             </ul>
-          </motion.div>
+          </MotionDiv>
         </div>
       </section>
 
@@ -200,7 +219,11 @@ export default function Content() {
           </p>
 
           <a
-            href={WHATSAPP_LINK}
+            href={buildWhatsAppLink(workSafetySectionContext)}
+            {...measurementAttributesForAcquisition(
+              workSafetySectionContext,
+              "whatsapp_click"
+            )}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-6 inline-flex rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 animate-pulse"
@@ -210,6 +233,7 @@ export default function Content() {
         </div>
       </section>
     </main>
+    </ReducedMotion>
   );
 }
 
@@ -221,7 +245,7 @@ function SectionCard({
   children: React.ReactNode;
 }) {
   return (
-    <motion.div
+    <MotionDiv
       initial={{ opacity: 0, y: 15 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.4 }}
@@ -230,7 +254,7 @@ function SectionCard({
     >
       <h3 className="text-sm font-semibold text-slate-900">{titulo}</h3>
       <ul className="mt-3 space-y-2 list-disc pl-4">{children}</ul>
-    </motion.div>
+    </MotionDiv>
   );
 }
 

@@ -1,17 +1,17 @@
 ﻿import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-    title: "Termos de Uso | Haase Soluções",
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+    title: "Termos de Uso",
     description:
         "Termos de Uso do site Haase Soluções em Segurança do Trabalho e Meio Ambiente. Conheça as regras de utilização do site.",
-    alternates: {
-        canonical: "/termos-de-uso",
-    },
-};
+    path: "/termos-de-uso",
+});
 
 export default function TermosDeUsoPage() {
     return (
-        <main className="bg-white text-slate-900">
+        <main id="main-content" tabIndex={-1} className="bg-white text-slate-900">
             <div className="mx-auto max-w-4xl px-4 py-12 md:py-20 prose prose-slate">
                 <h1 className="text-3xl font-bold text-slate-900">Termos de Uso</h1>
                 <p className="text-sm text-slate-600">

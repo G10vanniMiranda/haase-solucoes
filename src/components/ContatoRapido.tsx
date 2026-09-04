@@ -1,4 +1,12 @@
-﻿import { WHATSAPP_LINK } from "../lib/constants";
+import type { AcquisitionContext } from "../lib/acquisition/context";
+import { measurementAttributesForAcquisition } from "../lib/measurement/acquisition";
+import { buildWhatsAppLink } from "../lib/whatsapp";
+
+const contactWhatsAppContext = {
+    page: "home",
+    position: "contact",
+    intent: "contact",
+} satisfies AcquisitionContext;
 
 export function ContatoRapido() {
     return (
@@ -16,7 +24,11 @@ export function ContatoRapido() {
 
                     <div className="mt-5 flex flex-col items-center justify-center gap-3 md:flex-row md:gap-4">
                         <a
-                            href={WHATSAPP_LINK}
+                            href={buildWhatsAppLink(contactWhatsAppContext)}
+                            {...measurementAttributesForAcquisition(
+                                contactWhatsAppContext,
+                                "whatsapp_click"
+                            )}
                             target="_blank"
                             rel="noopener noreferrer"
                             aria-label="Chamar a HAASE no WhatsApp"
@@ -49,4 +61,3 @@ export function ContatoRapido() {
         </section>
     );
 }
-

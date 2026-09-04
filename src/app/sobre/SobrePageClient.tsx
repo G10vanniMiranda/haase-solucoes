@@ -1,23 +1,30 @@
-"use client";
+import { MotionDiv, MotionH1, MotionP, ReducedMotion } from "../../components/MotionPrimitives";
+import type { AcquisitionContext } from "../../lib/acquisition/context";
+import { measurementAttributesForAcquisition } from "../../lib/measurement/acquisition";
+import { buildWhatsAppLink } from "../../lib/whatsapp";
 
-import { motion } from "framer-motion";
-import { WHATSAPP_LINK } from "../../lib/constants";
+const aboutWhatsAppContext = {
+    page: "about",
+    position: "section",
+    intent: "contact",
+} satisfies AcquisitionContext;
 
 export default function SobrePageClient() {
     return (
-        <main className="bg-white text-slate-900">
+        <ReducedMotion>
+        <main id="main-content" tabIndex={-1} className="bg-white text-slate-900">
             <section className="border-b border-slate-200 bg-slate-50 py-12 md:py-20">
                 <div className="mx-auto max-w-6xl px-4">
-                    <motion.h1
+                    <MotionH1
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.6 }}
                         className="text-3xl font-bold md:text-4xl"
                     >
                         Sobre a HAASE
-                    </motion.h1>
+                    </MotionH1>
 
-                    <motion.p
+                    <MotionP
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.7, delay: 0.1 }}
@@ -26,13 +33,13 @@ export default function SobrePageClient() {
                         Atuação integrada na prevenção de riscos ocupacionais, na gestão ambiental e na
                         regularização legal de empreendimentos, oferecendo soluções técnicas completas,
                         seguras e alinhadas à legislação vigente.
-                    </motion.p>
+                    </MotionP>
                 </div>
             </section>
 
             <section className="border-b border-slate-200 py-12 md:py-16">
                 <div className="mx-auto max-w-6xl px-4 grid gap-10 md:grid-cols-2">
-                    <motion.div
+                    <MotionDiv
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -51,9 +58,9 @@ export default function SobrePageClient() {
                             órgãos públicos e escritórios jurídicos, garantindo conformidade legal, segurança
                             operacional e sustentabilidade ambiental.
                         </p>
-                    </motion.div>
+                    </MotionDiv>
 
-                    <motion.div
+                    <MotionDiv
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
@@ -65,7 +72,7 @@ export default function SobrePageClient() {
                             oferecendo soluções completas para a segurança do trabalhador e a preservação do
                             meio ambiente, sempre alinhadas às exigências normativas e às boas práticas profissionais.
                         </p>
-                    </motion.div>
+                    </MotionDiv>
                 </div>
             </section>
 
@@ -155,7 +162,11 @@ export default function SobrePageClient() {
                     </p>
 
                     <a
-                        href={WHATSAPP_LINK}
+                        href={buildWhatsAppLink(aboutWhatsAppContext)}
+                        {...measurementAttributesForAcquisition(
+                            aboutWhatsAppContext,
+                            "whatsapp_click"
+                        )}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="mt-6 inline-flex rounded-full bg-white px-6 py-2.5 text-sm font-semibold text-emerald-900 shadow-sm transition hover:bg-emerald-100 animate-pulse"
@@ -165,12 +176,13 @@ export default function SobrePageClient() {
                 </div>
             </section>
         </main>
+        </ReducedMotion>
     );
 }
 
 function Benefit({ children }: { children: React.ReactNode }) {
     return (
-        <motion.div
+        <MotionDiv
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -178,6 +190,6 @@ function Benefit({ children }: { children: React.ReactNode }) {
             className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-xs text-slate-700 shadow-sm"
         >
             {children}
-        </motion.div>
+        </MotionDiv>
     );
 }

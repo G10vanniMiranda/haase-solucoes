@@ -1,115 +1,96 @@
-﻿import type { Metadata } from "next";
+import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-    title: "Política de Privacidade | Haase Soluções",
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+    title: "Política de Privacidade",
     description:
-        "Política de Privacidade da Haase Soluções em Segurança do Trabalho e Meio Ambiente. Saiba como tratamos seus dados conforme a LGPD.",
-    alternates: {
-        canonical: "/politica-de-privacidade",
-    },
-};
+        "Conheça as informações de privacidade dos canais digitais da Haase Soluções.",
+    path: "/politica-de-privacidade",
+});
 
 export default function PoliticaPrivacidade() {
     return (
-        <main className="bg-white text-slate-900">
+        <main id="main-content" tabIndex={-1} className="bg-white text-slate-900">
             <div className="mx-auto max-w-4xl px-4 py-12 md:py-20 prose prose-slate">
                 <h1 className="text-3xl font-bold text-slate-900">
                     Política de Privacidade
                 </h1>
                 <p className="text-sm text-slate-600">
-                    Última atualização: <strong>2025</strong>
+                    Última atualização: <strong>2 de setembro de 2026</strong>
                 </p>
                 <br />
 
                 <p>
-                    A Haase Soluções em Segurança do Trabalho e Meio Ambiente, sediada em
-                    Porto Velho - RO, respeita sua privacidade e garante a segurança dos
-                    dados pessoais coletados em nossas interações. Esta Política explica
-                    como tratamos suas informações conforme a Lei Geral de Proteção de
-                    Dados (LGPD - Lei 13.709/2018).
+                    Esta Política descreve, de forma objetiva, o funcionamento atual dos
+                    canais digitais da Haase Soluções em Segurança do Trabalho e Meio
+                    Ambiente, sediada em Porto Velho - RO.
                 </p>
                 <br />
 
-                <h2>1. Informações que coletamos</h2>
-                <p>Podemos coletar:</p>
-                <ul>
-                    <li>Nome, telefone/WhatsApp, e-mail e informações da empresa;</li>
-                    <li>
-                        Dados enviados por formulários, mensagens ou solicitações de
-                        orçamento;
-                    </li>
-                    <li>Endereço IP, navegador, dispositivo e páginas acessadas;</li>
-                    <li>Cookies e dados estatísticos via ferramentas de analytics.</li>
-                </ul>
-                <br />
-
-                <h2>2. Finalidade do uso dos dados</h2>
-                <ul>
-                    <li>Responder solicitações e retornar contatos;</li>
-                    <li>Realizar consultorias, diagnósticos e orçamentos;</li>
-                    <li>Atender obrigações legais e regulatórias;</li>
-                    <li>
-                        Melhorar aspectos técnicos do site e segurança das informações;
-                    </li>
-                    <li>Evitar fraudes e acessos indevidos.</li>
-                </ul>
-                <br />
-
-                <h2>3. Compartilhamento de dados</h2>
+                <h2>1. Canais de contato disponíveis</h2>
                 <p>
-                    Podemos compartilhar dados apenas quando necessário para prestação de
-                    serviços, atendimento, hospedagem do site ou cumprimento legal.
-                    Jamais vendemos ou compartilhamos dados para fins comerciais.
+                    O site oferece links para contato por WhatsApp e e-mail. Atualmente,
+                    não existe formulário público ativo no site. Ao escolher um desses
+                    canais, você é direcionado ao respectivo serviço externo e decide se
+                    deseja enviar uma mensagem.
                 </p>
                 <br />
 
-                <h2>4. Armazenamento e segurança</h2>
+                <h2>2. Informações enviadas pelo usuário</h2>
                 <p>
-                    Utilizamos práticas como HTTPS, controle de acesso e armazenamento
-                    seguro para proteger suas informações.
+                    O simples acesso a uma página do site não envia à Haase o conteúdo de
+                    uma mensagem de WhatsApp ou e-mail. Se você iniciar o contato, a Haase
+                    poderá receber as informações que você decidir fornecer nesse canal,
+                    como seus dados de contato, informações da empresa e o conteúdo da
+                    solicitação.
                 </p>
                 <br />
 
-                <h2>5. Direitos do titular dos dados (LGPD)</h2>
-                <p>Você pode solicitar a qualquer momento:</p>
-                <ul>
-                    <li>Acesso e confirmação do tratamento;</li>
-                    <li>Correção de dados;</li>
-                    <li>Exclusão quando aplicável;</li>
-                    <li>Revogação de consentimento;</li>
-                    <li>Informações sobre compartilhamento;</li>
-                    <li>Portabilidade dos dados.</li>
-                </ul>
-                <br />
-
+                <h2>3. Finalidades do contato</h2>
                 <p>
-                    Para exercer seus direitos, envie um e-mail para:{" "}
-                    <strong>haasesolucoes@gmail.com</strong>
+                    As informações fornecidas diretamente pelo usuário podem ser usadas
+                    para responder à solicitação, prestar esclarecimentos e dar
+                    continuidade a pedidos de diagnóstico, serviço ou orçamento.
                 </p>
                 <br />
 
-                <h2>6. Cookies</h2>
+                <h2>4. Serviços externos</h2>
                 <p>
-                    Utilizamos cookies para melhorar sua experiência e coletar métricas de
-                    acesso. Você pode desativá-los no seu navegador.
+                    WhatsApp, e-mail, Instagram e outros links externos possuem ambientes
+                    e políticas próprios. O tratamento realizado nesses serviços depende
+                    do canal escolhido e da interação do usuário. Recomendamos consultar
+                    as informações de privacidade do respectivo provedor.
                 </p>
                 <br />
 
-                <h2>7. Links externos</h2>
+                <h2>5. Analytics e cookies</h2>
                 <p>
-                    Nosso site pode conter links para WhatsApp, Instagram ou outros
-                    serviços. Não nos responsabilizamos pelas políticas desses sites.
+                    Atualmente, o site não possui ferramenta externa de analytics ativa e
+                    não implementa cookies de analytics. Se uma ferramenta de medição for
+                    ativada no futuro, esta Política deverá ser atualizada para informar,
+                    de forma correspondente, a finalidade e o tratamento aplicáveis.
                 </p>
                 <br />
 
-                <h2>8. Alterações na política</h2>
+                <h2>6. Direitos e solicitações</h2>
                 <p>
-                    Esta política pode ser atualizada periodicamente. Recomendamos que você
-                    verifique esta página regularmente.
+                    Conforme aplicável, você pode solicitar informações sobre o
+                    tratamento, acesso, correção ou exclusão de dados, além de exercer
+                    outros direitos previstos na legislação. Para fazer uma solicitação,
+                    envie um e-mail para <strong>haasesolucoes@gmail.com</strong>.
                 </p>
                 <br />
 
-                <h2>9. Contato</h2>
+                <h2>7. Alterações nesta Política</h2>
+                <p>
+                    Esta Política pode ser atualizada para refletir mudanças no site, nos
+                    canais de contato ou nas práticas de tratamento. A data da versão será
+                    indicada no início desta página.
+                </p>
+                <br />
+
+                <h2>8. Contato</h2>
                 <p>
                     Em caso de dúvidas, entre em contato pelo e-mail{" "}
                     <strong>haasesolucoes@gmail.com</strong> ou telefone{" "}
@@ -117,7 +98,7 @@ export default function PoliticaPrivacidade() {
                 </p>
                 <br />
 
-                <h2>10. Controlador de Dados</h2>
+                <h2>9. Controlador</h2>
                 <p>
                     Haase Soluções em Segurança do Trabalho e Meio Ambiente - Porto Velho,
                     RO.

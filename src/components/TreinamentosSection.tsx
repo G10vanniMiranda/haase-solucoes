@@ -1,15 +1,22 @@
-﻿"use client";
-
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { WHATSAPP_LINK } from "../lib/constants";
+import type { AcquisitionContext } from "../lib/acquisition/context";
+import { measurementAttributesForAcquisition } from "../lib/measurement/acquisition";
+import { buildWhatsAppLink } from "../lib/whatsapp";
+import { MotionDiv, ReducedMotion } from "./MotionPrimitives";
+
+const trainingWhatsAppContext = {
+    page: "home",
+    position: "section",
+    intent: "talk-to-specialist",
+} satisfies AcquisitionContext;
 
 export function TreinamentosSection() {
     return (
+        <ReducedMotion>
         <section className="border-b border-slate-200 bg-slate-50">
             <div className="mx-auto max-w-6xl px-4 py-12 md:py-16">
                 <div className="grid gap-10 md:grid-cols-2 md:items-center">
-                    <motion.div
+                    <MotionDiv
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.4 }}
@@ -30,20 +37,24 @@ export function TreinamentosSection() {
                             <li>Atendimento personalizado conforme o tipo de empreendimento</li>
                         </ul>
 
-                        <motion.div
+                        <MotionDiv
                             whileHover={{ scale: 1.05, x: 3 }}
                             transition={{ type: "spring", stiffness: 240, damping: 18 }}
                             className="inline-flex"
                         >
                             <a
-                                href={WHATSAPP_LINK}
+                                href={buildWhatsAppLink(trainingWhatsAppContext)}
+                                {...measurementAttributesForAcquisition(
+                                    trainingWhatsAppContext,
+                                    "whatsapp_click"
+                                )}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="mt-5 inline-flex text-sm font-semibold text-emerald-700 hover:text-emerald-900 transition"
                             >
                                 Falar com um especialista →
                             </a>
-                        </motion.div>
+                        </MotionDiv>
 
                         <ul className="mt-4 space-y-1 text-xs font-medium text-emerald-700 list-disc pl-4">
                             <li>
@@ -62,9 +73,9 @@ export function TreinamentosSection() {
                                 </Link>
                             </li>
                         </ul>
-                    </motion.div>
+                    </MotionDiv>
 
-                    <motion.div
+                    <MotionDiv
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
@@ -82,10 +93,11 @@ export function TreinamentosSection() {
                             <li>Comércios e órgãos públicos</li>
                             <li>Escritórios de advocacia</li>
                         </ul>
-                    </motion.div>
+                    </MotionDiv>
                 </div>
             </div>
         </section>
+        </ReducedMotion>
     );
 }
 
